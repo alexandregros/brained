@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Icon from '@material-ui/core/Icon';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Menu from './Menu/Menu';
+import Game from './Game/Game';
+
+import './App.scss';
+
+const DEFAULT_STATE = {
+	isStarted: false
+}
+
+class App extends Component {
+	constructor() {
+		super()
+		this.state = {...DEFAULT_STATE}
+	}
+
+	// arrow fx for binding
+	handleStart = () => {
+		this.setState({isStarted: true})
+	}
+
+	// arrow fx for binding
+	handleReset = () => {
+		this.setState(DEFAULT_STATE)
+	}
+
+	render() {
+		return (
+			<div className="Brained">
+				<Icon className="icon refresh" onClick={this.handleReset}>refresh</Icon>
+				{
+					!this.state.isStarted
+					? <Menu onStarted={this.handleStart} />
+					: <Game />
+				}
+			</div>
+		)
+	}
 }
 
 export default App;

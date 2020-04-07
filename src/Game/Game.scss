@@ -1,0 +1,47 @@
+.Level {
+    .problem, .problem * {
+        text-align: center;
+        font-size: 20rem;
+    }
+
+    .InputWrapper {
+        margin-top: 3rem;
+
+        input[type="text"] {
+            background: transparent;
+            padding: 1rem 2rem;
+            display: block;
+            width: 100%;
+            font-size: 5rem;
+            max-width: 300px;
+            margin: auto;
+            border-bottom: 2px solid $primary;
+            text-align: center;
+        }
+    }
+
+    &3 {
+        .problem {
+            background-image: linear-gradient(to right, #56ab2f 0%, #a8e063 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-repeat: no-repeat;
+            background-color: $primary;
+            background-size: 0%;
+        }
+    }
+
+    &4 {
+        .problem * {
+            font-size: 15rem;
+        }
+    }
+}
+
+.congratulations {
+    text-align: center;
+
+    > button {
+        margin-top: 3rem;
+    }
+}
