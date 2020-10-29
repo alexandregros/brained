@@ -18,6 +18,10 @@ $secondary: #333;
 	outline: 0;
 
 	transition: all 0.2s ease;
+
+	&::selection {
+		color: black;
+	}
 }
 
 button {
@@ -59,13 +63,13 @@ h1 {
 		top: 2rem;
 		font-size: 5rem;
 		cursor: pointer;
+
+		&:hover {
+			transform: rotate(360deg);
+		}
 		
 		&.refresh {
 			left: 2rem;
-
-			&:hover {
-				transform: rotate(315deg);
-			}
 		}
 
 		&.tips {

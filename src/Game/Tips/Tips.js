@@ -43,7 +43,7 @@ class Tips extends Component {
                 <Icon className={`icon tips ${appear}`} onClick={() => this.setState({open: true})}>help</Icon>
 
                 <div className="TipsContainer">
-                    <Icon className="icon close" onClick={() => this.setState({open: false})}>highlight_off</Icon>
+                    <Icon className="icon close" onClick={() => this.setState({open: false})}>close</Icon>
                     <div className="tips">
                         {tips.map((tip, index) => (
                             <Animate

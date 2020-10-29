@@ -25,6 +25,7 @@
             background-image: linear-gradient(to right, #56ab2f 0%, #a8e063 100%);
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
+            background-clip: text;
             background-repeat: no-repeat;
             background-color: $primary;
             background-size: 0%;
