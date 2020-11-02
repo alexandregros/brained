@@ -76,12 +76,15 @@ class Game extends Component {
                             howManyTips={this.state.tipsNumber}
                         />
                     </Animate>
-                    <Tips 
-                        appear={(transition === LEVEL_TRANSITION_START) ? 'appear' : 'disappear'} 
-                        tips={TipsToDisplay}
-                        maxTips={levelTips.length}
-                        getOneTip={this.getOneTip}
-                    />
+                    {
+                        levelTips.length > 0 ?
+                        <Tips 
+                            appear={(transition === LEVEL_TRANSITION_START) ? 'appear' : 'disappear'} 
+                            tips={TipsToDisplay}
+                            maxTips={levelTips.length}
+                            getOneTip={this.getOneTip}
+                        /> : null
+                    }
                 </div>
             )
         }

@@ -9,9 +9,6 @@ class Tips extends Component {
 
     // arrow fx for binding
     componentDidMount = () => {
-        const {tips} = this.props
-        if (tips.length == 0) return false
-
         const tipsContainer = document.querySelector('.TipsContainer')
 
         document.addEventListener('click', function(e) {
@@ -41,35 +38,31 @@ class Tips extends Component {
     render() {
         const {appear, tips, maxTips} = this.props
 
-        if (tips.length) {
-            return (
-                <div className="TipsWrapper">
-                    <Icon className={`icon tips ${appear}`} onClick={() => this.setState({open: true})}>help</Icon>
-    
-                    <div className="TipsContainer">
-                        <Icon className="icon close" onClick={() => this.setState({open: false})}>close</Icon>
-                        <div className="tips">
-                            {tips.map((tip, index) => (
-                                <Animate
-                                    key={index}
-                                    play={true}
-                                    start={{opacity: 0, transform: "translate(5rem)"}}
-                                    end={{opacity: 1, transform: "translate(0)"}}
-                                >
-                                    <div className="tip">{tip}</div>
-                                </Animate>
-                            ))}
-                        </div>
-                        {
-                            tips.length < maxTips 
-                            && <button onClick={this.getOneTip}>{(tips.length < maxTips - 1) ? 'help' : 'Give me the answer :('}</button>
-                        }
-                    </div>
-                </div>
-            )
-        }
+        return (
+            <div className="TipsWrapper">
+                <Icon className={`icon tips ${appear}`} onClick={() => this.setState({open: true})}>help</Icon>
 
-        return null;
+                <div className="TipsContainer">
+                    <Icon className="icon close" onClick={() => this.setState({open: false})}>close</Icon>
+                    <div className="tips">
+                        {tips.map((tip, index) => (
+                            <Animate
+                                key={index}
+                                play={true}
+                                start={{opacity: 0, transform: "translate(5rem)"}}
+                                end={{opacity: 1, transform: "translate(0)"}}
+                            >
+                                <div className="tip">{tip}</div>
+                            </Animate>
+                        ))}
+                    </div>
+                    {
+                        tips.length < maxTips 
+                        && <button onClick={this.getOneTip}>{(tips.length < maxTips - 1) ? 'help' : 'Give me the answer :('}</button>
+                    }
+                </div>
+            </div>
+        )
     }
 }
 
