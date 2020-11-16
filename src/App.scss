@@ -5,6 +5,8 @@ $secondary: #333;
 @import 'Game/Game';
 @import 'Game/Tips/Tips';
 
+@import 'light';
+
 * {
 	font-size: 10px;
 	font-family: 'Courier New', Courier, monospace;
@@ -21,23 +23,6 @@ $secondary: #333;
 
 	&::selection {
 		color: black;
-	}
-}
-
-button {
-	background-image: linear-gradient(to right, $primary 0%, $primary 50%);
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-size: 0%;
-
-	font-size: 3rem;
-	padding: 1rem 2rem;
-	border: 2px solid $primary;
-	cursor: pointer;
-
-	&:hover {
-		background-size: 100%;
-		color: $secondary;
 	}
 }
 
@@ -58,18 +43,35 @@ h1 {
 
 	background-color: $secondary;
 
+	button {
+		background-image: linear-gradient(to right, $primary 0%, $primary 50%);
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-size: 0%;
+	
+		font-size: 3rem;
+		padding: 1rem 2rem;
+		border: 2px solid $primary;
+		cursor: pointer;
+	
+		&:hover {
+			background-size: 100%;
+			color: $secondary;
+		}
+	}
+
 	.icon {
 		position: absolute;
 		top: 2rem;
 		font-size: 5rem;
 		cursor: pointer;
-
-		&:hover {
-			transform: rotate(360deg);
-		}
 		
 		&.refresh {
 			left: 2rem;
+
+			&:hover {
+				transform: rotate(360deg);
+			}
 		}
 
 		&.tips {
@@ -82,5 +84,14 @@ h1 {
 		&.close {
 			position: unset;
 		}
+
+		&.theme {
+			top: 8rem;
+			left: 2rem;
+		}
+	}
+
+	&.light {
+		@include theme;
 	}
 }

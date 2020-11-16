@@ -7,7 +7,11 @@ import Game from './Game/Game';
 import './App.scss';
 
 const DEFAULT_STATE = {
-	isStarted: false
+	isStarted: false,
+	theme    : {
+		dark: true,
+		icon: 'wb_sunny'
+	}
 }
 
 class App extends Component {
@@ -26,10 +30,22 @@ class App extends Component {
 		this.setState(DEFAULT_STATE)
 	}
 
+	handleTheme = () => {
+		const isDark = this.state.theme.dark;
+
+		this.setState({theme: {
+			dark: !isDark,
+			icon: !isDark ? 'wb_sunny' : 'brightness_3'
+		}})
+	}
+
 	render() {
+		const {theme} = this.state
+
 		return (
-			<div className="Brained">
+			<div className={`Brained ${!theme.dark ? 'light' : ''}`}>
 				<Icon className="icon refresh" onClick={this.handleReset}>refresh</Icon>
+				<Icon className="icon theme" onClick={this.handleTheme}>{theme.icon}</Icon>
 				{
 					!this.state.isStarted
 					? <Menu onStarted={this.handleStart} />

@@ -1,0 +1,32 @@
+@mixin theme {
+    background-color: $primary;
+
+    * {color: $secondary}
+
+    button {
+        background-image: linear-gradient(to right, $secondary 0%, $secondary 50%);
+        border-color: $secondary;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    .Level {
+        .InputWrapper {
+            input[type="text"] {
+                border-color: $secondary;
+            }
+        }
+
+        .TipsWrapper {
+            .TipsContainer {
+                background-color: darken($primary, 5%);
+
+                &.opened {
+                    box-shadow: 0px 0px 10px 5px darken($primary, 10%);
+                }
+            }
+        }
+    }
+}

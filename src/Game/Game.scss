@@ -37,6 +37,22 @@
             font-size: 15rem;
         }
     }
+
+    &5 {
+        .problem {
+            color: $secondary !important;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translate3d(-50%, 0px, 0px);
+
+            &::selection {
+                color: $secondary !important;
+                background-color: $secondary !important;
+            }
+        }
+    }
 }
 
 .congratulations {
