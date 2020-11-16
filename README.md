@@ -2,23 +2,23 @@
 
 ## Compilation
 
-Pour compiler les sources, il faut d'abord télécharger tous les packages Node. Avant cela, il faut se rendre dans le dossier où se trouvent les sources :
+In order to compile the sources, you must first download all Node packages. Before that, go to the installation folder:
 
-`cd %chemin_vers_le_dossier%/brained`
+`cd %path_to_folder%/brained`
 
-### Avec Yarn
+### With Yarn
 
 * `yarn install`
 * `yarn build`
 
-### Avec NPM
+### With NPM
 
 * `npm install`
 * `npm run build`
 
-## Lancer le jeu
+## Launch the game
 
-Deux solutions :
+Two solutions :
 
-* Créer un virtual host qui pointe sur le dossier `%chemin_vers_le_dossier%/brained/build` avant de pouvoir y accéder via un navigateur
-* Lancer un serveur de développement local via la commande `yarn start` ou `npm start`
+* Create a virtual host linked to the path `%chemin_vers_le_dossier%/brained/build` and launch it through your browser
+* `yarn start` or `npm start` to create a virtual development server and access it on port `3000` of your local host (for example : `http://localhost:3000`)
